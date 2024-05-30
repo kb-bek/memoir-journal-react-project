@@ -1,0 +1,13 @@
+.button {
+    cursor: pointer;
+}
+
+
+.save-btn {
+    background-color: #8576FF;
+    padding: 10px 20px;
+}
+
+.save-btn:hover {
+    background-color: #6d5bfa;
+}
