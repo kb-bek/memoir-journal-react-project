@@ -1,8 +1,16 @@
 import './Button.css';
+import { useState } from 'react';
 
-function Button(props) {
+function Button() {
+
+    const [text, setText] = useState('Открыть')
+
+    const clicked = () => {
+        setText('Закрыть')
+    }
+
     return (
-        <button className="button save-btn" >{props.label}</button>
+        <button onClick={clicked} className="button save-btn" >{text}</button>
     )
 }
 
