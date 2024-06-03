@@ -1,7 +1,7 @@
 import './JournalItem.css'
 
 const JournalItem = ({title, date, text}) => {
-
+    
     return (
         <div className="journal-item">
             <h2 className="journal-item-heading">{title}</h2>

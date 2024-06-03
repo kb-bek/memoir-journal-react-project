@@ -1,13 +1,24 @@
 .button {
+    border-radius: 6px;
+    padding: 8px 30px;
+    font-family: inherit;
     cursor: pointer;
+    transition: background 0.25s;
+    font-size: 16px;
+    border: none;
+
 }
 
 
 .save-btn {
     background-color: #8576FF;
-    padding: 10px 20px;
 }
 
 .save-btn:hover {
     background-color: #6d5bfa;
+}
+
+
+.delete {
+    background-color: red;
 }

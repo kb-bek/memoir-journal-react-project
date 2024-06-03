@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css'
 import Button from './components/Button/Button'
 import JournalItem from './components/JournalItem/JournalItem'
@@ -11,7 +12,7 @@ function App() {
       text: 'Создал первую заметку'
     },
     {
-      title: 'Второя заметка',
+      title: 'Вторая заметка',
       date: new Date(),
       text: 'Создал вторую заметку'
     },
@@ -39,9 +40,13 @@ function App() {
       date={data[2].date.toString()}
       text={data[2].text}
       />
-      <Button/>
+      <Button label="Сохранить"/>
+      
     </>
   )
 }
 
 export default App
+
+
+
