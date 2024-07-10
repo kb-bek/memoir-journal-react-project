@@ -1,16 +1,8 @@
 import './Button.css';
-import { useState } from 'react';
 
-function Button() {
-
-    const [text, setText] = useState('Открыть')
-
-    const clicked = () => {
-        setText('Закрыть')
-    }
-
+function Button({ text }) {
     return (
-        <button onClick={clicked} className="button save-btn" >{text}</button>
+        <button className="button save-btn" >{text}</button>
     )
 }
 

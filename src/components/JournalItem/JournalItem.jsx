@@ -1,3 +1,4 @@
+import React from 'react';
 import './JournalItem.css'
 
 const JournalItem = ({title, date, text}) => {
