@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
-import './JournalForm.css';
+import styles from './JournalForm.module.css';
 
-function JournalForm() {
-  const getValues = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+function JournalForm({ onSubmit }) {
+
+  const addJournalItem = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
-    console.log(formProps);
+    onSubmit(formProps);
   };
 
   return (
-    <form onSubmit={getValues} className="journal-form">
+    <form onSubmit={addJournalItem} className={styles['journal-form']}>
       <input type="text" name="title" />
       <input type="date" name="date" />
       <input type="text" name="tag" />
