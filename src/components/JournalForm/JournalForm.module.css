@@ -5,11 +5,45 @@
 }
 
 .input {
-    border: 1px solid white;
-    background-color: rgb(48, 47, 47);
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-family: 'Source Sans 3', sans-serif;
+    border-bottom: 1.5px solid #207ecf;
+    width: 100%;
 }
 
+.input-title {
+    border: none;
+    background: none;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-family: 'Source Sans 3', sans-serif;
+    border-bottom: 1.5px solid #207ecf;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.form-lable {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 150px;
+}
+
+
+
 .invalid {
-    background: rgb(110, 0, 0);
-    border: red;
+    border: 1px solid red;
+    background: rgb(68, 6, 6);
 }

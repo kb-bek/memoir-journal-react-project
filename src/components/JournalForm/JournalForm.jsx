@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
 import styles from './JournalForm.module.css';
+import cn from 'classnames';
 
 function JournalForm({ onSubmit }) {
   const [formValidState, setFormValidState] = useState({
@@ -28,20 +29,53 @@ function JournalForm({ onSubmit }) {
       isFormValid = false;
     }
 
-    if(!isFormValid) {
+    if (!isFormValid) {
       return;
     }
     onSubmit(formProps);
   };
 
-  
-
   return (
     <form onSubmit={addJournalItem} className={styles['journal-form']}>
-      <input type="text" name="title" className={`${styles['input']} ${formValidState.date ? '' : 'invalid'}`} />
-      <input type="date" name="date" />
-      <input type="text" name="tag" />
-      <textarea name="text" id="" cols={30} rows={20}></textarea>
+      <div>
+        <input
+          type="text"
+          name="title"
+          className={cn(styles['input-title'], {
+            [styles['invalid']]: !formValidState.title,
+          })}
+        />
+      </div>
+      <div className={styles['form-row']}>
+        <label htmlFor="date" className={styles['form-lable']}>
+          <img src="/calendar.svg" alt="Иконка календаря" />
+          <span>Дата</span>
+        </label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          className={cn(styles['input'], {
+            [styles['invalid']]: !formValidState.title,
+          })}
+        />
+      </div>
+      <div className={styles['form-row']}>
+        <label htmlFor="date" className={styles['form-lable']}>
+          <img src="/folder.svg" alt="Иконка метки" />
+          <span>Метки</span>
+        </label>
+        <input type="text" name="tag" className={styles['input']} />
+      </div>
+      <textarea
+        name="text"
+        id=""
+        cols={30}
+        rows={20}
+        className={cn(styles['input'], {
+          [styles['invalid']]: !formValidState.title,
+        })}
+      ></textarea>
       <Button text="Сохранить" />
     </form>
   );
